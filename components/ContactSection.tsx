@@ -38,7 +38,7 @@ const ContactSection: React.FC = () => {
 
     return (
         <div id="contact" className="w-full px-[10%] scroll-mt-20 mt-10">
-            <h1 className="text-center  text-xl lg:text-3xl text-foreground mb-20">
+            <h1 className="text-center  text-xl lg:text-3xl text-foreground mb-10 lg:mb-20">
                 CONTACT ME
             </h1>
             <motion.div

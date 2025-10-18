@@ -28,6 +28,21 @@ const SkillsSection = () => {
                 {/* Title */}
 
                 <div className="grid lg:grid-cols-2 gap-15 mb-8">
+                    <motion.div className="flex  items-center lg:order-2"
+                        initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.8, }}
+                    >
+
+                        <div className=" rounded-md overflow-hidden inline-block ">
+                            <Image
+                                src="/photos/about-1.jpg"
+                                alt="Photographer Profile"
+                                width={500} // image natural width
+                                height={500} // image natural height
+                                className="w-full h-auto rounded-md"
+                                priority
+                            />
+                        </div>
+                    </motion.div>
                     <div>
                         <motion.h2
                             className="text-2xl font-semibold  text-accent-foreground mb-4"
@@ -75,21 +90,7 @@ const SkillsSection = () => {
                             ))}
                         </div>
                     </div>
-                    <motion.div className="flex  items-center"
-                        initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.8, }}
-                    >
 
-                        <div className=" rounded-md overflow-hidden inline-block ">
-                            <Image
-                                src="/photos/about-1.jpg"
-                                alt="Photographer Profile"
-                                width={500} // image natural width
-                                height={500} // image natural height
-                                className="w-full h-auto rounded-md"
-                                priority
-                            />
-                        </div>
-                    </motion.div>
 
 
                 </div>
