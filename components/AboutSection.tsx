@@ -23,7 +23,7 @@ const AboutSection: React.FC = () => {
                     >
                         <div className="relative w-60 h-60 lg:w-80 lg:h-80 border-2 border-black rounded-md  overflow-hidden">
                             <Image
-                                src="/photos/about.jpg"
+                                src="/photos/my-pic.jpg"
                                 alt="Photographer Profile"
                                 fill
                                 className="object-cover"
@@ -33,30 +33,35 @@ const AboutSection: React.FC = () => {
                     </motion.div>
 
                     {/* Text Section */}
-                    <motion.div className="flex flex-col justify-center"
-                        initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.8, }}
+                    <motion.div
+                        className="flex flex-col justify-center"
+                        initial={{ opacity: 0, y: 50 }} // start hidden & slightly below
+                        whileInView={{ opacity: 1, y: 0 }} // fade in and rise up
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{
+                            duration: 0.8, // smooth speed
+                            ease: "easeOut", // gentle easing
+                            delay: 0.3, // short delay for better flow
+                        }}
                     >
                         <div>
-                            <div className=" grid lg:grid-cols-2 gap-5 mb-8">
-                                <div className="border-1 border-accent-foreground rounded-lg p-5 text-center flex flex-col justify-center items-center">
+                            <div className="grid lg:grid-cols-2 gap-5 mb-8">
+                                <div className="border border-accent-foreground rounded-lg p-5 text-center flex flex-col justify-center items-center">
                                     <p><Award /></p>
                                     <p className="font-bold">Experience</p>
-                                    <p className="font-light"> 1 + years</p>
-                                    <p className="font-light">Front end Development</p>
-
-
+                                    <p className="font-light">1+ years</p>
+                                    <p className="font-light">Frontend Development</p>
                                 </div>
-                                <div className="border-1 border-accent-foreground rounded-lg p-5 text-center flex flex-col justify-center items-center">
-                                    <p> <Users /></p>
+                                <div className="border border-accent-foreground rounded-lg p-5 text-center flex flex-col justify-center items-center">
+                                    <p><Users /></p>
                                     <p className="font-bold">Education</p>
-                                    <p className="font-light">B-tech</p>
-                                    <p className="font-light">  mechanical engineering</p>
-
-
+                                    <p className="font-light">B-Tech</p>
+                                    <p className="font-light">Mechanical Engineering</p>
                                 </div>
                             </div>
                         </div>
-                        <p className="text-sm lg:text-lg font-light text-foreground text-justify font-montserrat ">
+
+                        <p className="text-sm lg:text-lg font-light text-foreground text-justify font-montserrat">
                             I’m a passionate Frontend Developer with experience in building
                             responsive and user-friendly web applications. Proficient in
                             JavaScript, React.js, Next.js, and Tailwind CSS, I love crafting
@@ -65,6 +70,7 @@ const AboutSection: React.FC = () => {
                             appealing digital solutions.
                         </p>
                     </motion.div>
+
                 </div>
             </div>
         </section>

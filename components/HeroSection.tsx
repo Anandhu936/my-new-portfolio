@@ -14,18 +14,31 @@ const HeroSection = () => {
             <div id="home" className="flex justify-center">
                 <div className="w-full xl:w-[1200px]">
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-0 gap-6 ">
-                        <motion.div className="flex justify-center lg:order-2" initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.8, }} >
+                        <motion.div
+                            className="flex justify-center lg:order-2"
+                            initial={{ opacity: 0, y: 50 }} // starts hidden & slightly below
+                            whileInView={{ opacity: 1, y: 0 }} // fades in & moves up smoothly
+                            viewport={{ once: false, amount: 0.3 }}
+                            transition={{
+                                duration: 0.8, // smoother timing
+                                ease: "easeOut", // natural easing
+                                delay: 0.3, // small delay for nicer flow
+                            }}
+                        >
+                            {/* your content here */}
+
+
                             <div className="relative w-60 h-60 lg:w-[440px] lg:h-[440px] mt-0 lg:mt-20">
                                 <Image
                                     src="/photos/hero.jpg"
                                     alt="Photographer Profile"
                                     fill
                                     className="
-                                    rounded-full object-cover border-2
-                                  border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.3)]
-                                  dark:border-[#fff] dark:shadow-[0_0_20px_#FFF]
-                                    transition-all duration-300
-                                    "
+                            rounded-full object-cover border-2 border-gray-800
+                            shadow-[0_0_25px_rgba(255,100,100,0.5)]
+                            dark:shadow-[0_0_25px_rgba(100,150,255,0.7)]
+                            transition-all duration-500
+                             "
                                     priority
                                 />
                             </div>
@@ -89,7 +102,7 @@ const HeroSection = () => {
 
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 };
