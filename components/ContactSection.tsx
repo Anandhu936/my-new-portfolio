@@ -1,96 +1,138 @@
 "use client";
-import React, { useState } from "react";
+
 import { motion } from "framer-motion";
-import { BiRightArrowAlt } from "react-icons/bi";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 
-const ContactSection: React.FC = () => {
-    const [result, setResult] = useState<string>("");
+export function ContactSection() {
+  return (
+    <section id="contact" className="py-20 bg-slate-550 dark:bg-gray-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Get In Touch
+          </h2>
+          <div className="h-1 w-20 bg-primary-600 mx-auto rounded-full mb-8" />
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Whether you have a specific project in mind, need consultation for MEP systems, or just want to say hello, my inbox is always open.
+          </p>
+        </motion.div>
 
-    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        setResult("Sending....");
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col justify-center gap-8 bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800"
+          >
+            <div className="flex items-start">
+              <div className="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0">
+                <Mail className="h-6 w-6" />
+              </div>
+              <div className="ml-6">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Email</h4>
+                <p className="mt-1 text-gray-600 dark:text-gray-400">anandhunair777@example.com</p>
+                <a href="mailto:email@example.com" className="text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400 mt-2 inline-block text-sm font-medium">
+                  Send a message
+                </a>
+              </div>
+            </div>
 
-        const form = event.currentTarget;
-        const formData = new FormData(form);
+            <div className="flex items-start">
+              <div className="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0">
+                <Phone className="h-6 w-6" />
+              </div>
+              <div className="ml-6">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Phone</h4>
+                <p className="mt-1 text-gray-600 dark:text-gray-400">+91 99467 32936</p>
+              
+              </div>
+            </div>
 
-        formData.append("access_key", "0472fe5c-21ba-4dc1-b7d2-c5e0d4a3f4b1");
+            <div className="flex items-start">
+              <div className="h-12 w-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0">
+                <MapPin className="h-6 w-6" />
+              </div>
+              <div className="ml-6">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Location</h4>
+                <p className="mt-1 text-gray-600 dark:text-gray-400">Kozhikode, Kerala, India</p>
+                <p className="text-gray-500 dark:text-gray-500 mt-1 text-sm">Available for relocation</p>
+              </div>
+            </div>
+          </motion.div>
 
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                setResult("Form Submitted Successfully");
-                form.reset();
-            } else {
-                console.error("Error", data);
-                setResult(data.message || "Submission failed. Please try again.");
-            }
-        } catch (error) {
-            console.error("Network Error:", error);
-            setResult("Something went wrong. Please try again later.");
-        }
-    };
-
-    return (
-        <div id="contact" className="w-full px-[10%] scroll-mt-20 mt-10">
-            <h1 className="text-center  text-xl lg:text-3xl text-foreground mb-10 lg:mb-20">
-                CONTACT ME
-            </h1>
-            <motion.div
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 25,
-                    delay: 0.8,
-                }}
-            >
-                <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 mb-8">
-                        <input
-                            type="text"
-                            placeholder="Enter your name"
-                            required
-                            className="flex-1 p-3 outline-neutral-50 border-[0.5px] border-gray-400 rounded-md  "
-                            name="name"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            required
-                            pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
-                            className="flex-1 p-3 outline-neutral-50 border-[0.5px] border-gray-400 rounded-md "
-                            name="email"
-                        />
-                    </div>
-
-                    <textarea
-                        rows={6}
-                        placeholder="Enter your message"
-                        required
-                        className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md  mb-6"
-                        name="message"
-                    ></textarea>
-
-                    <button
-                        type="submit"
-                        className="py-3 px-8 w-max flex items-center cursor-pointer justify-between gap-2  border-[0.5px] border-foreground text-foreground rounded-full mx-auto hover:text-green-500 duration-500"
-                    >
-                        Submit Now <BiRightArrowAlt size={20} className="text-foreground" />
-                    </button>
-
-                    <p className="mt-4 text-center text-white">{result}</p>
-                </form>
-            </motion.div>
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="mt-2 block w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900 dark:text-white"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="mt-2 block w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900 dark:text-white"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  className="mt-2 block w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900 dark:text-white"
+                  placeholder="Project Inquiry"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="mt-2 block w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900 dark:text-white resize-none"
+                  placeholder="How can I help you?"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-primary hover:bg-primary-700 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              >
+                Send Message
+                <Send className="ml-2 h-5 w-5" />
+              </button>
+            </form>
+          </motion.div>
         </div>
-    );
-};
-
-export default ContactSection;
+      </div>
+    </section>
+  );
+}

@@ -1,80 +1,137 @@
-"use client"
-import React from "react";
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CheckCircle2, User, Building, GraduationCap } from 'lucide-react';
 import Image from "next/image";
-import { Award, Users } from "lucide-react";
-import { motion } from "framer-motion";
 
-const AboutSection: React.FC = () => {
-    return (
-        <section
-            id="about"
-            className="flex justify-center pt-5 pb-5 lg:pt-10 lg:pb-20"
+interface Highlight {
+  icon: React.ReactNode;
+  title: string;
+}
+
+const About: React.FC = () => {
+  const highlights: Highlight[] = [
+    { 
+      icon: <User className="text-primary-500" size={24} />, 
+      title: "Mechanical Engineering Graduate" 
+    },
+    { 
+      icon: <Building className="text-primary-500" size={24} />, 
+      title: "HVAC & MEP Design Specialist" 
+    },
+    { 
+      icon: <GraduationCap className="text-primary-500" size={24} />, 
+      title: "Certified in Revit & AutoCAD" 
+    },
+  ];
+
+  return (
+    <section
+      id="about"
+      className=" py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-            <div className="w-full px-[10%] rounded-lg">
-                <h1 className="text-xl lg:text-3xl text-foreground font-semibold text-center">
-                    ABOUT
-                </h1>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            About Me
+          </h2>
+          <div className="w-20 h-1.5 bg-primary-500 mx-auto rounded-full mb-8"></div>
+        </motion.div>
 
-                <div className="grid lg:grid-cols-2 gap-6 mt-8 lg:mt-20">
-                    {/* Image Section */}
-                    <motion.div className="flex justify-center"
-                        initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.8, }}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Side: Image/Portrait Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <div className="aspect-4/5 bg-slate-200 dark:bg-slate-800 relative group flex items-center justify-center">
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent z-10" />
 
-                    >
-                        <div className="relative w-60 h-60 lg:w-80 lg:h-80 border-2 border-black rounded-md  overflow-hidden">
-                            <Image
-                                src="/photos/my-pic.jpg"
-                                alt="Photographer Profile"
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        </div>
-                    </motion.div>
+                <Image
+                  src="/photos/my-photo.jpg"
+                  alt="Photographer Profile"
+                  fill
+                  priority
+                />
 
-                    {/* Text Section */}
-                    <motion.div
-                        className="flex flex-col justify-center"
-                        initial={{ opacity: 0, y: 50 }} // start hidden & slightly below
-                        whileInView={{ opacity: 1, y: 0 }} // fade in and rise up
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{
-                            duration: 0.8, // smooth speed
-                            ease: "easeOut", // gentle easing
-                            delay: 0.3, // short delay for better flow
-                        }}
-                    >
-                        <div>
-                            <div className="grid lg:grid-cols-2 gap-5 mb-8">
-                                <div className="border border-accent-foreground rounded-lg p-5 text-center flex flex-col justify-center items-center">
-                                    <p><Award /></p>
-                                    <p className="font-bold">Experience</p>
-                                    <p className="font-light">1+ years</p>
-                                    <p className="font-light">Frontend Development</p>
-                                </div>
-                                <div className="border border-accent-foreground rounded-lg p-5 text-center flex flex-col justify-center items-center">
-                                    <p><Users /></p>
-                                    <p className="font-bold">Education</p>
-                                    <p className="font-light">B-Tech</p>
-                                    <p className="font-light">Mechanical Engineering</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p className="text-sm lg:text-lg font-light text-foreground text-justify font-montserrat">
-                            I’m a passionate Frontend Developer with experience in building
-                            responsive and user-friendly web applications. Proficient in
-                            JavaScript, React.js, Next.js, and Tailwind CSS, I love crafting
-                            clean and efficient code to enhance user experiences. Constantly
-                            learning and evolving, I aim to create intuitive and visually
-                            appealing digital solutions.
-                        </p>
-                    </motion.div>
-
+                <div className="absolute bottom-6 left-6 z-20 text-white">
+                  <h3 className="text-2xl font-bold mb-1">ANANDHU U</h3>
+                  <p className="text-slate-200">MEP Engineer</p>
                 </div>
+              </div>
             </div>
-        </section>
-    );
+          </motion.div>
+
+          {/* Right Side: Content Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="lg:col-span-7"
+          >
+            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+              Professional Overview
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              I am a dedicated Mechanical Engineering graduate with a strong
+              specialization in MEP (Mechanical, Electrical, and Plumbing)
+              engineering. My passion lies in creating efficient, sustainable,
+              and innovative building systems that optimize performance and
+              minimize environmental impact.
+            </p>
+            <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+              My core objective is to leverage my comprehensive training and
+              technical skills in HVAC design, heat load calculation, duct
+              layout, and system modeling to contribute effectively to dynamic
+              engineering projects and progressive organizations.
+            </p>
+
+            {/* Highlights Grid */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {highlights.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg border border-slate-100 dark:border-slate-800"
+                >
+                  {item.icon}
+                  <span className="font-semibold text-slate-800 dark:text-slate-200">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Career Objective Box */}
+            <div className="bg-primary-50 dark:bg-primary-900/10 border-l-4 border-primary-500 p-6 rounded-r-lg">
+              <h4 className="flex items-center gap-2 font-bold text-slate-900 dark:text-white mb-2">
+                <CheckCircle2 className="text-primary-500" size={20} /> Career
+                Objective
+              </h4>
+              <p className="text-slate-700 dark:text-slate-300 italic">
+                &quot;To secure a challenging position in a reputable
+                engineering firm where I can apply my expertise in MEP and HVAC
+                design to deliver cost-effective and energy-efficient building
+                solutions, while continuing to grow professionally.&quot;
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default AboutSection;
+export default About;

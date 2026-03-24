@@ -6,14 +6,14 @@ import { Facebook, Instagram, Twitter, Github } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-background/80 backdrop-blur-md border-t border-border/50 py-8 mt-10">
+        <footer className="bg-background/80 backdrop-blur-md border-t border-border/50 py-8 ">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Navigation */}
                 <nav className="flex space-x-6 text-sm font-medium">
                     <Link href="#home" className="hover:text-primary transition">Home</Link>
                     <Link href="#about" className="hover:text-primary transition">About</Link>
-                    <Link href="#skills" className="hover:text-primary transition">Skills</Link>
-                    <Link href="#work" className="hover:text-primary transition">Work</Link>
+                    <Link href="#projects" className="hover:text-primary transition">Projects</Link>
+                    <Link href="#experience" className="hover:text-primary transition">Experience</Link>
                     <Link href="#contact" className="hover:text-primary transition">Contact</Link>
                 </nav>
 

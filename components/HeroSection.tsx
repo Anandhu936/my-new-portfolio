@@ -11,7 +11,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div id="home" className="flex justify-center">
+            <div id="home" className="flex justify-center bg-slate-50 dark:bg-slate-950 py-30">
                 <div className="w-full xl:w-[1200px]">
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-0 gap-6 ">
                         <motion.div
@@ -49,8 +49,8 @@ const HeroSection = () => {
                             <h1 className="text-2xl lg:text-4xl xl:text-5xl text-foreground font-semibold  font-sans">
                                 <TextChanger />
                             </h1>
-                            <p className="text-xl lg:text-4xl font-sacramento  text-green-500">
-                                Frontend Developer
+                             <p className="text-xl lg:text-4xl font-serif  text-green-500">
+                                MEP Engineer
                             </p>
                             <div className="flex gap-[20px] mt-[10px] lg:mt-0">
                                 <a
@@ -61,7 +61,7 @@ const HeroSection = () => {
                                     Download CV
                                 </a>
 
-                                <Link href="#Contact" className="border-2 border-accent-foreground rounded-full px-5 py-2 text-foreground hover:text-green-500 transition-all">
+                                <Link href="#contact" className="border-2 border-accent-foreground rounded-full px-5 py-2 text-foreground hover:text-green-500 transition-all">
                                     Contact Info
                                 </Link>
                             </div>
