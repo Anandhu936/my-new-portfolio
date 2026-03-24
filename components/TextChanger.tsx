@@ -1,8 +1,12 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 const TextChanger: React.FC = () => {
-    const texts: string[] = ["Anandhu Unnimadhavan", "Anandhu Unnimadhavan", "Anandhu Unnimadhavan"];
+   const texts = useMemo(() => [
+  "Anandhu Unnimadhavan",
+  "Anandhu Unnimadhavan",
+  "Anandhu Unnimadhavan"
+], []);
     const [currentText, setCurrentText] = useState<string>("");
     const [endValue, setEndValue] = useState<number>(0);
     const [isForward, setIsForward] = useState<boolean>(true);
