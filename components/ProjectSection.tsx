@@ -81,7 +81,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section   id="projects" className="py-20 bg-white dark:bg-slate-900">
+    <section   id="projects" className="py-10 lg:py-20 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -131,7 +131,7 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-4">
-                <h3 className="font-bold text-lg">{project.title}</h3>
+                <h3 className="font-bold text-black text-lg">{project.title}</h3>
                 <p className="text-sm text-gray-600">{project.description}</p>
               </div>
             </div>

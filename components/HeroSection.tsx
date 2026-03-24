@@ -11,7 +11,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div id="home" className="flex justify-center bg-gray-200 dark:bg-slate-950 py-30">
+            <div id="home" className="flex justify-center bg-gray-200 dark:bg-slate-950 py-10 lg:py-20">
                 <div className="w-full xl:w-[1200px]">
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-0 gap-6 ">
                         <motion.div
