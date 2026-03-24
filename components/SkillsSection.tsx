@@ -39,7 +39,7 @@ const serviceAreas = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20 bg-gray-200 dark:bg-slate-950 border-y border-gray-100 dark:border-gray-800">
+    <section id="skills" className="py-10 lg:py-20 bg-gray-200 dark:bg-slate-950 border-y border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

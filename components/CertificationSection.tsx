@@ -20,7 +20,7 @@ const Certifications = () => {
     {
       title: "AutoCAD 2D/3D Drafting",
       issuer: "Axions Institute",
-      icon: <FileBadge2 size={32} className="text-primary-500" />,
+      icon: <FileBadge2 size={32} className="text-yellow-500" />,
       color: "from-primary-500/20 to-primary-500/5"
     }
   ];
