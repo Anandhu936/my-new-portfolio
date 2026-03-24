@@ -7,11 +7,11 @@ import Link from "next/link";
 const HeroSection = () => {
 
     const resumeUrl =
-        "/photos/My-Resume.pdf";
+        "/photos/Anandhu-CV.pdf";
 
     return (
         <>
-            <div id="home" className="flex justify-center bg-slate-50 dark:bg-slate-950 py-30">
+            <div id="home" className="flex justify-center bg-gray-200 dark:bg-slate-950 py-30">
                 <div className="w-full xl:w-[1200px]">
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-0 gap-6 ">
                         <motion.div
@@ -55,7 +55,7 @@ const HeroSection = () => {
                             <div className="flex gap-[20px] mt-[10px] lg:mt-0">
                                 <a
                                     href={resumeUrl}
-                                    download="My-Resume.pdf"
+                                    download="Anandhu-CV.pdf"
                                     className="border-2 border-accent-foreground rounded-full px-5 py-2 text-foreground hover:text-green-500 transition-all"
                                 >
                                     Download CV
