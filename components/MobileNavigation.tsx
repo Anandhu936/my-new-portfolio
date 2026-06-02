@@ -31,7 +31,7 @@ export default function MobileNavigation() {
         visible: (i: number) => ({
             opacity: 1,
             y: 0,
-            transition: { delay: 0.05 + i * 0.07, type: "spring", stiffness: 200, damping: 22 },
+            transition: { delay: 0.05 + i * 0.07, type: "spring" as const, stiffness: 200, damping: 22 },
         }),
         exit: (i: number) => ({
             opacity: 0,
