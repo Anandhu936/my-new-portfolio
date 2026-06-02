@@ -29,7 +29,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className=" py-10 lg:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800"
+      className=" py-10 lg:py-20 bg-white border-t border-slate-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -39,7 +39,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             About Me
           </h2>
          
@@ -55,7 +55,7 @@ const About: React.FC = () => {
             className="lg:col-span-5"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
-              <div className="aspect-4/5 bg-slate-200 dark:bg-slate-800 relative group flex items-center justify-center">
+              <div className="aspect-4/5 bg-slate-200 relative group flex items-center justify-center">
                 {/* Overlay for better text readability */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent z-10" />
 
@@ -63,6 +63,7 @@ const About: React.FC = () => {
                   src="/photos/my-photo.jpg"
                   alt="Photographer Profile"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   priority
                 />
 
@@ -82,17 +83,17 @@ const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:col-span-7"
           >
-            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+            <h3 className="text-2xl font-bold text-slate-800 mb-4">
               Professional Overview
             </h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            <p className="text-slate-600 mb-6 leading-relaxed">
               I am a dedicated Mechanical Engineering graduate with a strong
               specialization in MEP (Mechanical, Electrical, and Plumbing)
               engineering. My passion lies in creating efficient, sustainable,
               and innovative building systems that optimize performance and
               minimize environmental impact.
             </p>
-            <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+            <p className="text-slate-600 mb-8 leading-relaxed">
               My core objective is to leverage my comprehensive training and
               technical skills in HVAC design, heat load calculation, duct
               layout, and system modeling to contribute effectively to dynamic
@@ -104,10 +105,10 @@ const About: React.FC = () => {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg border border-slate-100 dark:border-slate-800"
+                  className="flex items-center gap-3 bg-slate-50 p-4 rounded-lg border border-slate-100"
                 >
                   {item.icon}
-                  <span className="font-semibold text-slate-800 dark:text-slate-200">
+                  <span className="font-semibold text-slate-800">
                     {item.title}
                   </span>
                 </div>
@@ -115,12 +116,12 @@ const About: React.FC = () => {
             </div>
 
             {/* Career Objective Box */}
-            <div className="bg-primary-50 dark:bg-primary-900/10 border-l-4 border-primary-500 p-6 rounded-r-lg">
-              <h4 className="flex items-center gap-2 font-bold text-slate-900 dark:text-white mb-2">
+            <div className="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-r-lg">
+              <h4 className="flex items-center gap-2 font-bold text-slate-900 mb-2">
                 <CheckCircle2 className="text-primary-500" size={20} /> Career
                 Objective
               </h4>
-              <p className="text-slate-700 dark:text-slate-300 italic">
+              <p className="text-slate-700 italic">
                 &quot;To secure a challenging position in a reputable
                 engineering firm where I can apply my expertise in MEP and HVAC
                 design to deliver cost-effective and energy-efficient building

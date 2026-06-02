@@ -81,7 +81,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section   id="projects" className="py-10 lg:py-20 bg-white dark:bg-slate-900">
+    <section   id="projects" className="py-10 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -97,7 +97,7 @@ const Projects = () => {
               className={`px-4 py-2 rounded-full ${
                 filter === cat
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-200 dark:bg-gray-700"
+                  : "bg-gray-200"
               }`}
             >
               {cat}
@@ -121,6 +121,7 @@ const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition"
                 />
 
@@ -166,7 +167,7 @@ const Projects = () => {
                 {/* Close */}
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 bg-white dark:bg-slate-600 text-black dark:text-white p-2 rounded-full shadow"
+                  className="absolute top-4 right-4 bg-white text-black p-2 rounded-full shadow"
                 >
                   ✕
                 </button>

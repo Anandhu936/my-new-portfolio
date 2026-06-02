@@ -5,7 +5,6 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import ThemeToggle from "./ThemeToggle"
 import { Button } from "./ui/button"
 import { Menu } from "lucide-react"
 import {  navLinks } from "@/lib/constants"
@@ -15,7 +14,6 @@ import { useState } from "react"
 export default function MobileNavigation() {
     const [isOpen, setIsOpen] = useState(false);
     return <div className="md:hidden flex items-center space-x-4">
-        <ThemeToggle />
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild><Button variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
