@@ -39,7 +39,7 @@ const serviceAreas = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-10 lg:py-20 bg-gray-200 border-y border-gray-100">
+    <section id="skills" className="py-10 lg:py-20 bg-secondary border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,11 +48,11 @@ export function SkillsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Skills & Expertise
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Skills & <span className="text-blue-500">Expertise</span>
           </h2>
-          <div className="h-1 w-20 bg-primary-600 mx-auto rounded-full" />
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full" />
+          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
             A comprehensive overview of my technical proficiencies and service capabilities in the MEP sector.
           </p>
         </motion.div>
@@ -65,15 +65,15 @@ export function SkillsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold mb-8 text-gray-900">Technical Proficiency</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-foreground">Technical Proficiency</h3>
             <div className="space-y-6">
               {technicalSkills.map((skill, index) => (
                 <div key={skill.name}>
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-                    <span className="text-sm font-medium text-gray-500">{skill.level}%</span>
+                    <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                    <span className="text-sm font-medium text-muted-foreground">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                  <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
                     <motion.div
                       className="bg-primary h-2.5 rounded-full"
                       initial={{ width: 0 }}
@@ -94,19 +94,19 @@ export function SkillsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold mb-8 text-gray-900">Core Areas</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-foreground">Core Areas</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {serviceAreas.map((area) => (
                 <motion.div
                   key={area.title}
                   whileHover={{ y: -5 }}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                  className="bg-card p-6 rounded-xl shadow-sm border border-border hover:border-primary/50 hover:shadow-primary/10 hover:shadow-lg transition-all"
                 >
-                  <div className="h-12 w-12 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+                  <div className="h-12 w-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
                     <area.icon className="h-6 w-6" />
                   </div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">{area.title}</h4>
-                  <p className="text-sm text-gray-600 leading-relaxed">{area.description}</p>
+                  <h4 className="text-lg font-medium text-foreground mb-2">{area.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
                 </motion.div>
               ))}
             </div>

@@ -11,7 +11,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div id="home" className="flex justify-center bg-gray-200 py-10 lg:py-20">
+            <div id="home" className="flex justify-center bg-gradient-to-br from-background via-secondary to-background py-10 lg:py-20">
                 <div className="w-full xl:w-[1200px]">
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-0 gap-6 ">
                         <motion.div
@@ -35,10 +35,10 @@ const HeroSection = () => {
                                     fill
                                     sizes="(max-width: 768px) 240px, 440px"
                                     className="
-                            rounded-full object-cover border-2 border-gray-800
-                            shadow-[0_0_25px_rgba(255,100,100,0.5)]
-                            transition-all duration-500
-                             "
+                    rounded-full object-cover border-4 border-primary
+                    shadow-[0_0_30px_rgba(20,184,166,0.4)]
+                    transition-all duration-500
+                     "
                                     priority
                                 />
                             </div>
@@ -49,19 +49,19 @@ const HeroSection = () => {
                             <h1 className="text-2xl lg:text-4xl xl:text-5xl text-foreground font-semibold  font-sans">
                                 <TextChanger />
                             </h1>
-                             <p className="text-xl lg:text-4xl font-serif  text-green-500">
+                             <p className="text-xl lg:text-4xl font-serif  text-primary">
                                 MEP Engineer
                             </p>
                             <div className="flex gap-[20px] mt-[10px] lg:mt-0">
                                 <a
                                     href={resumeUrl}
                                     download="Anandhu-CV.pdf"
-                                    className="border-2 border-accent-foreground rounded-full px-5 py-2 text-foreground hover:text-green-500 transition-all"
+                                    className="border-2 border-border rounded-full px-5 py-2 text-foreground hover:border-primary hover:text-primary transition-all"
                                 >
                                     Download CV
                                 </a>
 
-                                <Link href="#contact" className="border-2 border-accent-foreground rounded-full px-5 py-2 text-foreground hover:text-green-500 transition-all">
+                                <Link href="#contact" className="border-2 border-border rounded-full px-5 py-2 text-foreground hover:border-primary hover:text-primary transition-all">
                                     Contact Info
                                 </Link>
                             </div>

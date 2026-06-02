@@ -81,11 +81,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <section   id="projects" className="py-10 lg:py-20 bg-white">
+    <section   id="projects" className="py-10 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-foreground">Featured <span className="text-primary">Projects</span></h2>
         </div>
 
         {/* Filters */}
@@ -94,10 +94,10 @@ const Projects = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-2 rounded-full ${
+              className={`px-4 py-2 rounded-full font-medium text-sm transition-all ${
                 filter === cat
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200"
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
+                  : "bg-card border border-border text-muted-foreground hover:border-primary/50 hover:text-primary"
               }`}
             >
               {cat}
@@ -110,7 +110,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-100 rounded-xl overflow-hidden shadow group"
+              className="bg-card rounded-xl overflow-hidden shadow border border-border group hover:border-primary/50 hover:shadow-primary/10 hover:shadow-lg transition-all"
             >
               {/* Image */}
               <div
@@ -132,8 +132,8 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-4">
-                <h3 className="font-bold text-black text-lg">{project.title}</h3>
-                <p className="text-sm text-gray-600">{project.description}</p>
+                <h3 className="font-bold text-foreground text-lg">{project.title}</h3>
+                <p className="text-sm text-muted-foreground">{project.description}</p>
               </div>
             </div>
           ))}

@@ -55,7 +55,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-200">
+    <section id="contact" className="py-20 bg-secondary border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,11 +64,11 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Get In Touch
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Get In <span className="text-primary">Touch</span>
           </h2>
           <div className="h-1 w-20 bg-primary-600 mx-auto rounded-full mb-8" />
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Whether you have a specific project in mind, need consultation for MEP systems, or just want to say hello, my inbox is always open.
           </p>
         </motion.div>
@@ -80,18 +80,18 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center gap-8 bg-gray-50 p-8 rounded-2xl border border-gray-100"
+            className="flex flex-col justify-center gap-8 bg-card p-8 rounded-2xl border border-border"
           >
             <div className="flex items-start">
-              <div className="h-12 w-12 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center shrink-0">
+              <div className="h-12 w-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
                 <Mail className="h-6 w-6" />
               </div>
               <div className="ml-6">
-                <h4 className="text-lg font-semibold text-gray-900">Email</h4>
-                <p className="mt-1 text-gray-600">anandhunair777@gmail.com</p>
+                <h4 className="text-lg font-semibold text-foreground">Email</h4>
+                <p className="mt-1 text-muted-foreground">anandhunair777@gmail.com</p>
                 <a
                   href="mailto:anandhunair777@gmail.com"
-                  className="text-primary-600 hover:text-primary-700 mt-2 inline-block text-sm font-medium"
+                  className="text-primary hover:text-primary/80 mt-2 inline-block text-sm font-medium"
                 >
                   Send a message
                 </a>
@@ -99,23 +99,23 @@ export function ContactSection() {
             </div>
 
             <div className="flex items-start">
-              <div className="h-12 w-12 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center shrink-0">
+              <div className="h-12 w-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
                 <Phone className="h-6 w-6" />
               </div>
               <div className="ml-6">
-                <h4 className="text-lg font-semibold text-gray-900">Phone</h4>
-                <p className="mt-1 text-gray-600">+91 99467 32936</p>
+                <h4 className="text-lg font-semibold text-foreground">Phone</h4>
+                <p className="mt-1 text-muted-foreground">+91 99467 32936</p>
               </div>
             </div>
 
             <div className="flex items-start">
-              <div className="h-12 w-12 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center shrink-0">
+              <div className="h-12 w-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
                 <MapPin className="h-6 w-6" />
               </div>
               <div className="ml-6">
-                <h4 className="text-lg font-semibold text-gray-900">Location</h4>
-                <p className="mt-1 text-gray-600">Kozhikode, Kerala, India</p>
-                <p className="text-gray-500 mt-1 text-sm">Available for relocation</p>
+                <h4 className="text-lg font-semibold text-foreground">Location</h4>
+                <p className="mt-1 text-muted-foreground">Kozhikode, Kerala, India</p>
+                <p className="text-muted-foreground/70 mt-1 text-sm">Available for relocation</p>
               </div>
             </div>
           </motion.div>
@@ -167,7 +167,7 @@ export function ContactSection() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    className="mt-2 block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900"
+                    className="mt-2 block w-full px-4 py-3 bg-card border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-foreground placeholder:text-muted-foreground/50"
                     placeholder="John Doe"
                     required
                     disabled={formState === "loading"}
@@ -183,7 +183,7 @@ export function ContactSection() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    className="mt-2 block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900"
+                    className="mt-2 block w-full px-4 py-3 bg-card border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-foreground placeholder:text-muted-foreground/50"
                     placeholder="john@example.com"
                     required
                     disabled={formState === "loading"}
@@ -200,7 +200,7 @@ export function ContactSection() {
                   name="subject"
                   value={form.subject}
                   onChange={handleChange}
-                  className="mt-2 block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900"
+                  className="mt-2 block w-full px-4 py-3 bg-card border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-foreground placeholder:text-muted-foreground/50"
                   placeholder="Project Inquiry"
                   required
                   disabled={formState === "loading"}
@@ -216,7 +216,7 @@ export function ContactSection() {
                   rows={4}
                   value={form.message}
                   onChange={handleChange}
-                  className="mt-2 block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-gray-900 resize-none"
+                  className="mt-2 block w-full px-4 py-3 bg-card border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-foreground placeholder:text-muted-foreground/50 resize-none"
                   placeholder="How can I help you?"
                   required
                   disabled={formState === "loading"}
