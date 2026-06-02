@@ -6,7 +6,7 @@ import { Facebook, Instagram, Twitter, Github } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-white backdrop-blur-md border-t border-border/50 py-8 ">
+        <footer className="bg-card backdrop-blur-md border-t border-border py-8 ">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Navigation */}
                 <nav className="flex space-x-6 text-sm font-medium">
