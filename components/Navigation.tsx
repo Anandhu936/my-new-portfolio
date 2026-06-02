@@ -20,7 +20,7 @@ export default function Navbar() {
                     {/* {desktop navigation} */}
                     <div className="hidden md:flex   items-center space-x-4">
                         {navLinks.map((item) => (
-                            <Link key={item.name} href={item.href} className=" font-montserrat text-sm lg:text-md font-medium text-muted-foreground hover:text-foreground transition-colors duration-200">{item.name}</Link>
+                            <Link key={item.name} href={item.href} className=" font-montserrat text-sm lg:text-md font-medium text-muted-foreground hover:text-primary  transition-colors duration-200">{item.name}</Link>
                         ))}
                     </div>
                     <MobileNavigation />
