@@ -11,7 +11,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div id="home" className="flex justify-center bg-gray-200 dark:bg-slate-950 py-10 lg:py-20">
+            <div id="home" className="flex justify-center bg-gray-200 py-10 lg:py-20">
                 <div className="w-full xl:w-[1200px]">
                     <div className=" lg:grid lg:grid-cols-2 lg:gap-0 gap-6 ">
                         <motion.div
@@ -33,10 +33,10 @@ const HeroSection = () => {
                                     src="/photos/hero.jpg"
                                     alt="Photographer Profile"
                                     fill
+                                    sizes="(max-width: 768px) 240px, 440px"
                                     className="
                             rounded-full object-cover border-2 border-gray-800
                             shadow-[0_0_25px_rgba(255,100,100,0.5)]
-                            dark:shadow-[0_0_25px_rgba(100,150,255,0.7)]
                             transition-all duration-500
                              "
                                     priority

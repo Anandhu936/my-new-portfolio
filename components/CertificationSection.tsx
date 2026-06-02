@@ -26,7 +26,7 @@ const Certifications = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-200 dark:bg-slate-950">
+    <section className="py-20 bg-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ const Certifications = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Licenses & Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Licenses & Certifications</h2>
           <div className="w-20 h-1.5 bg-primary-500 mx-auto rounded-full mb-8"></div>
         </motion.div>
 
@@ -47,13 +47,13 @@ const Certifications = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-100 dark:border-slate-800 transition-all duration-300 group"
+              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 group"
             >
               <div className={`w-16 h-16 rounded-xl bg-linear-to-br ${cert.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 {cert.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 leading-snug">{cert.title}</h3>
-              <p className="text-slate-500 dark:text-slate-400 font-medium">{cert.issuer}</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-2 leading-snug">{cert.title}</h3>
+              <p className="text-slate-500 font-medium">{cert.issuer}</p>
             </motion.div>
           ))}
         </div>
